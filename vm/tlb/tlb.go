@@ -3,6 +3,7 @@ package tlb
 import (
 	"log"
 	"reflect"
+	"fmt"
 
 	"gitlab.com/akita/akita/v2/sim"
 	"gitlab.com/akita/mem/v2/vm"
@@ -44,6 +45,8 @@ func (tlb *TLB) reset() {
 
 // Tick defines how TLB update states at each cycle
 func (tlb *TLB) Tick(now sim.VTimeInSec) bool {
+
+	fmt.Println("This works")
 	madeProgress := false
 
 	madeProgress = tlb.performCtrlReq(now) || madeProgress
